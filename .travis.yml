@@ -5,11 +5,10 @@ os: osx
 script:
   set -o pipefail &&
   travis_retry
-  xcodebuild test
+  xcodebuild build
   -workspace CotEditor.xcworkspace
   -scheme CotEditor
   -destination 'platform=macOS'
-  -enableCodeCoverage NO
   CODE_SIGN_IDENTITY=""
   CODE_SIGNING_REQUIRED=NO
   | xcpretty
